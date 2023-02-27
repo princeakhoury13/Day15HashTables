@@ -11,7 +11,7 @@ namespace Day15HashTables
     {
         public static void Frequency()
         {
-            string sentence = "To be or not to be";
+            string sentence = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
             Hashtable wordFreq = new Hashtable();
 
             
@@ -30,6 +30,19 @@ namespace Day15HashTables
                     wordFreq.Add(word, 1);
                 }
             }
+
+            foreach (string word in wordFreq.Keys)
+            {
+                Console.WriteLine("{0}: {1}", word, wordFreq[word]);
+            }
+
+
+            Console.WriteLine("---------------------------------");
+            Console.WriteLine("New Frequencies after removing the Word avoidable: ");
+            wordFreq.Remove("avoidable");
+
+            Console.WriteLine("---------------------------------");
+            
 
             foreach (string word in wordFreq.Keys)
             {
